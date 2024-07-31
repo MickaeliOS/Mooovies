@@ -14,7 +14,7 @@
 		834313812BEB9EE400ADE940 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 834313802BEB9EE400ADE940 /* Alamofire */; };
 		834313832BEB9EE400ADE940 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 834313822BEB9EE400ADE940 /* AlamofireDynamic */; };
 		834313872BEB9F1300ADE940 /* MovieListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834313862BEB9F1300ADE940 /* MovieListWorker.swift */; };
-		834313892BEB9F1A00ADE940 /* MovieListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834313882BEB9F1A00ADE940 /* MovieListEntity.swift */; };
+		834313892BEB9F1A00ADE940 /* MovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834313882BEB9F1A00ADE940 /* MovieEntity.swift */; };
 		8343138B2BEB9F2300ADE940 /* MovieListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8343138A2BEB9F2300ADE940 /* MovieListBuilder.swift */; };
 		8343138D2BEB9F2B00ADE940 /* MovieListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8343138C2BEB9F2B00ADE940 /* MovieListInteractor.swift */; };
 		8343138F2BEB9F3300ADE940 /* MovieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8343138E2BEB9F3300ADE940 /* MovieListPresenter.swift */; };
@@ -28,6 +28,7 @@
 		834313A72BEBAAE100ADE940 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834313A62BEBAAE100ADE940 /* APIConfiguration.swift */; };
 		834313AF2BEBC9B100ADE940 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834313AE2BEBC9B100ADE940 /* UIViewControllerExtension.swift */; };
 		834313D92BEBD43A00ADE940 /* MoooviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834313D82BEBD43A00ADE940 /* MoooviesTests.swift */; };
+		83FA68482C3E96DC0045E134 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA68472C3E96DC0045E134 /* MovieDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,7 @@
 		834313752BEB9E0C00ADE940 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8343137D2BEB9E9500ADE940 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		834313862BEB9F1300ADE940 /* MovieListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListWorker.swift; sourceTree = "<group>"; };
-		834313882BEB9F1A00ADE940 /* MovieListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListEntity.swift; sourceTree = "<group>"; };
+		834313882BEB9F1A00ADE940 /* MovieEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
 		8343138A2BEB9F2300ADE940 /* MovieListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListBuilder.swift; sourceTree = "<group>"; };
 		8343138C2BEB9F2B00ADE940 /* MovieListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListInteractor.swift; sourceTree = "<group>"; };
 		8343138E2BEB9F3300ADE940 /* MovieListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListPresenter.swift; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 		834313AE2BEBC9B100ADE940 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		834313D62BEBD43A00ADE940 /* MoooviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoooviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		834313D82BEBD43A00ADE940 /* MoooviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoooviesTests.swift; sourceTree = "<group>"; };
+		83FA68472C3E96DC0045E134 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		8343137B2BEB9E1100ADE940 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				83FA68462C3E96C50045E134 /* MovieDetail */,
 				8343139E2BEBA2E100ADE940 /* MovieList */,
 				8343139F2BEBA2EF00ADE940 /* Credits */,
 			);
@@ -139,10 +142,10 @@
 			children = (
 				8343138A2BEB9F2300ADE940 /* MovieListBuilder.swift */,
 				8343137D2BEB9E9500ADE940 /* MovieListViewController.swift */,
+				834313A22BEBA7EB00ADE940 /* MovieListTableViewCell.swift */,
 				8343138C2BEB9F2B00ADE940 /* MovieListInteractor.swift */,
 				834313862BEB9F1300ADE940 /* MovieListWorker.swift */,
-				834313A22BEBA7EB00ADE940 /* MovieListTableViewCell.swift */,
-				834313882BEB9F1A00ADE940 /* MovieListEntity.swift */,
+				834313882BEB9F1A00ADE940 /* MovieEntity.swift */,
 				8343138E2BEB9F3300ADE940 /* MovieListPresenter.swift */,
 				834313922BEB9F4300ADE940 /* MovieListRouter.swift */,
 			);
@@ -179,6 +182,14 @@
 				834313D82BEBD43A00ADE940 /* MoooviesTests.swift */,
 			);
 			path = MoooviesTests;
+			sourceTree = "<group>";
+		};
+		83FA68462C3E96C50045E134 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				83FA68472C3E96DC0045E134 /* MovieDetailViewController.swift */,
+			);
+			path = MovieDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,13 +308,14 @@
 				8343138D2BEB9F2B00ADE940 /* MovieListInteractor.swift in Sources */,
 				834313A12BEBA3F200ADE940 /* CreditsViewController.swift in Sources */,
 				834313932BEB9F4300ADE940 /* MovieListRouter.swift in Sources */,
+				83FA68482C3E96DC0045E134 /* MovieDetailViewController.swift in Sources */,
 				834313682BEB9DFE00ADE940 /* AppDelegate.swift in Sources */,
 				834313872BEB9F1300ADE940 /* MovieListWorker.swift in Sources */,
 				8343136A2BEB9DFE00ADE940 /* SceneDelegate.swift in Sources */,
 				8343138B2BEB9F2300ADE940 /* MovieListBuilder.swift in Sources */,
 				834313A72BEBAAE100ADE940 /* APIConfiguration.swift in Sources */,
 				834313AF2BEBC9B100ADE940 /* UIViewControllerExtension.swift in Sources */,
-				834313892BEB9F1A00ADE940 /* MovieListEntity.swift in Sources */,
+				834313892BEB9F1A00ADE940 /* MovieEntity.swift in Sources */,
 				834313A32BEBA7EB00ADE940 /* MovieListTableViewCell.swift in Sources */,
 				8343138F2BEB9F3300ADE940 /* MovieListPresenter.swift in Sources */,
 			);

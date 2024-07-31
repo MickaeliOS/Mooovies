@@ -8,8 +8,10 @@
 import Foundation
 
 protocol MovieListPresenterProtocol: AnyObject {
-    func presentData(response: [MovieListEntity]?)
+    func presentPopularMovies(movieList: [Movie], currentPage: Int)
+    func presentSearchedMovies(movieList: [Movie], currentPage: Int)
     func presentError(message: String)
+    func presentNextPage(movieList: [Movie], currentPage: Int)
 }
 
 class MovieListPresenter {
@@ -17,12 +19,19 @@ class MovieListPresenter {
 }
 
 extension MovieListPresenter: MovieListPresenterProtocol {
-    func presentData(response: [MovieListEntity]?) {
-        let viewModel = response
-        viewController?.presentData(viewModel: viewModel)
+    func presentPopularMovies(movieList: [Movie], currentPage: Int) {
+        viewController?.presentPopularMovies(movieList: movieList, currentPage: currentPage)
+    }
+
+    func presentSearchedMovies(movieList: [Movie], currentPage: Int) {
+        viewController?.presentSearchedMovies(movieList: movieList, currentPage: currentPage)
     }
 
     func presentError(message: String) {
         viewController?.presentError(message: message)
+    }
+
+    func presentNextPage(movieList: [Movie], currentPage: Int) {
+        viewController?.presentNextPage(viewModel: movieList, currentPage: currentPage)
     }
 }
