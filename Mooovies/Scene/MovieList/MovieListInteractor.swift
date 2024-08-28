@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: PROTOCOL
 protocol MovieListInteractorProtocol: AnyObject {
     associatedtype TypeOfResearch
 
@@ -16,7 +17,7 @@ protocol MovieListInteractorProtocol: AnyObject {
     func searchMovies(from title: String)
 }
 
-class MovieListInteractor {
+final class MovieListInteractor {
     var presenter: MovieListPresenterProtocol?
     var searchType = SearchType.userSearch
     private var worker: MovieListWorker
@@ -30,6 +31,7 @@ enum SearchType {
     case userSearch, popular
 }
 
+// MARK: EXTENSION
 extension MovieListInteractor: MovieListInteractorProtocol {
     typealias TypeOfResearch = SearchType
 

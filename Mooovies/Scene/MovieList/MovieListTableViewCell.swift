@@ -14,6 +14,8 @@ protocol MovieListTableViewCellProtocol: AnyObject {
 }
 
 class MovieListTableViewCell: UITableViewCell {
+
+    // MARK: UI PROPERTIES
     private lazy var horizontalStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [movieImage, verticalStackView])
         stack.axis = .horizontal
@@ -34,7 +36,6 @@ class MovieListTableViewCell: UITableViewCell {
 
     private var movieImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 10
         return imageView
@@ -45,6 +46,7 @@ class MovieListTableViewCell: UITableViewCell {
     private var movieGenres = UILabel()
     private var movieDate = UILabel()
 
+    // MARK: VIEW LIFE CYCLE
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupConstraints()
@@ -55,6 +57,7 @@ class MovieListTableViewCell: UITableViewCell {
     }
 }
 
+// MARK: EXTENSION
 extension MovieListTableViewCell {
     private func setupConstraints() {
         setupCellView()
@@ -85,7 +88,7 @@ extension MovieListTableViewCell {
     private func setupImage() {
         movieImage.snp.makeConstraints { make in
             make.height.equalTo(200)
-            make.width.equalTo(200)
+            make.width.equalTo(130)
         }
     }
 

@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-class MovieListBuilder {
+final class MovieListBuilder {
     static func build() -> UIViewController {
-        // Gets data from API
+        // Our worker gets data from API
         let worker = MovieListWorker()
 
         let vc = MovieListViewController()

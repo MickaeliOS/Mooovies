@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 
+// MARK: PROTOCOL
 protocol MovieListWorkerProtocol: AnyObject {
     associatedtype TypeOfResearch
 
@@ -19,6 +20,8 @@ protocol MovieListWorkerProtocol: AnyObject {
 }
 
 final class MovieListWorker: MovieListWorkerProtocol {
+
+    // MARK: PROPERTIES
     typealias TypeOfResearch = SearchType
 
     private let session: Session = {
@@ -34,6 +37,7 @@ final class MovieListWorker: MovieListWorkerProtocol {
     private var baseConfigurationStringURL = "https://api.themoviedb.org/3/configuration?api_key="
     private var baseGenreStringURL = "https://api.themoviedb.org/3/genre/movie/list?api_key="
 
+    // MARK: FUNCTIONS
     func getPopularMovies(completion: @escaping (Result<MovieResponse, MovieListWorkerError>) -> Void) {
         var movieListStringURLCopy = popularMovieListStringURL
         movieListStringURLCopy.append(APIConfiguration.apiKey)
@@ -151,6 +155,7 @@ final class MovieListWorker: MovieListWorkerProtocol {
     }
 }
 
+// MARK: ENUM
 enum MovieListWorkerError: Error {
     case badURL
     case noData

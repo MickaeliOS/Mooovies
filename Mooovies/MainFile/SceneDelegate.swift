@@ -14,7 +14,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-
         let window = UIWindow(windowScene: windowScene)
 
         // Main Scene
@@ -23,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let welcomeNVC = UINavigationController(rootViewController: welcomeVC)
 
         // Credit Scene
-        let creditsVC = CreditsViewController()
+        let creditsVC = CreditsBuilder.build()
         creditsVC.tabBarItem = UITabBarItem(title: "Credits", image: UIImage(systemName: "hand.thumbsup.fill"), tag: 1)
 
         // TabBar

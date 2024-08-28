@@ -15,7 +15,6 @@ protocol MovieListViewControllerProtocol: AnyObject {
     func presentNextPage(viewModel: [Movie], currentPage: Int)
 }
 
-// MARK: - VC
 class MovieListViewController: UIViewController {
 
     // MARK: PROPERTIES
@@ -23,14 +22,17 @@ class MovieListViewController: UIViewController {
     var router: MovieListRouterProtocol?
     var searchingTimer: Timer?
     var searchingType = SearchType.popular
-
     var popularMovieList = [Movie]()
-    private lazy var movies = [Movie]() {
+    private var popularCurrentPage: Int?
+    private var currentPage: Int?
+
+    lazy var movies = [Movie]() {
         didSet {
             tableView.reloadData()
         }
     }
 
+    // MARK: UI PROPERTIES
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -43,17 +45,16 @@ class MovieListViewController: UIViewController {
         let searchBar = UISearchBar()
         searchBar.delegate = self
         searchBar.placeholder = "Search a Movie"
+        searchBar.returnKeyType = .done
         return searchBar
     }()
-
-    private var popularCurrentPage: Int?
-    private var currentPage: Int?
 
     // MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.getMovieConfiguration()
         buildUI()
+        dismissKeyboardWithGesture()
     }
 }
 
@@ -79,6 +80,16 @@ extension MovieListViewController {
         searchBar.snp.makeConstraints { make in
             make.top.right.left.equalTo(view.safeAreaLayoutGuide)
         }
+    }
+
+    func dismissKeyboardWithGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
+    }
+
+    @objc
+    private func dismissKeyboard() {
+        self.searchBar.resignFirstResponder()
     }
 }
 
@@ -157,5 +168,9 @@ extension MovieListViewController: UISearchBarDelegate {
                 self?.interactor?.searchMovies(from: searchText)
             })
         }
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        dismissKeyboard()
     }
 }

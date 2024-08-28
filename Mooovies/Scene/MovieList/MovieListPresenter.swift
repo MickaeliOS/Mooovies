@@ -14,7 +14,7 @@ protocol MovieListPresenterProtocol: AnyObject {
     func presentNextPage(movieList: [Movie], currentPage: Int)
 }
 
-class MovieListPresenter {
+final class MovieListPresenter {
     weak var viewController: MovieListViewControllerProtocol?
 }
 
